@@ -1,0 +1,34 @@
+﻿@model BTRS.Models.Passengers;
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td>
+                Username
+            </td>
+            <td>
+                @Html.TextBox("Username")
+                <span asp-validation-for="Username"></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                @Html.Password("Password")
+                <span asp-validation-for="Password"></span>
+            </td>
+
+        </tr>
+
+    </table>
+    @Html.TextBox("LoginBtn", "Login", new { @type = "Submit" })
+    <a asp-action="SignUp" asp-controller="Passengers" class="btn btn-link">  SignUp </a>
+
+</form>
+
+@TempData["Msg"]
